@@ -18,7 +18,6 @@ When the reader has completed this lab, they will understand how to:
 * Create and deploy self learning Watson Machine learning models
 
 
-
 ## Architecture
 
 ![Architecture](images/architecture.png)
@@ -37,7 +36,7 @@ If you haven't done this already, [sign up for an IBM Cloud account](https://clo
 # Steps
 
 1. [Create Watson Studio Project](#1-create-watson-studio-project)
-2. [Add DB2 Warehouse on Cloud  connection to Watson Studio Project](#2-add-db2-warehouse-on-cloud-connection-to-watson-studio-project)
+2. [Add Db2 Warehouse on Cloud connection to Watson Studio Project](#2-add-db2-warehouse-on-cloud-connection-to-watson-studio-project)
 3. [Add connected asset into Watson Studio](#3-add-connected-asset-into-watson-studio)
 4. [Create Apache Spark as a service with IBM Cloud](#4-create-apache-spark-as-a-service-with-ibm-cloud)
 5. [Create Watson Machine Learning with IBM Cloud](#5-create-watson-machine-learning-with-ibm-cloud)
@@ -62,7 +61,7 @@ d. Click **Refresh** to load the details of the new Object Storage instance
 
 e. Click **Create** to complete the New Project wizard.
 
-### 2. Add DB2 Warehouse on Cloud  connection to Watson Studio Project
+### 2. Add DB2 Warehouse on Cloud connection to Watson Studio Project
 
 a. Click **Add to project** and then click on **Connection**
 
@@ -177,9 +176,11 @@ c. Wait for the status of the new deployment to change to **DEPLOY_SUCCESS**
 
 ![Deploy success](images/ss17.png)
 
-d. Click on the name of the deployment to bring up the details of the deployment.
+### 9. Test the model
 
-e. Click on the **Test** tab and enter the following values (matching the case exactly)
+a. Click on the name of the deployment to bring up the details of the deployment.
+
+b. Click on the **Test** tab and enter the following values (matching the case exactly)
 
 | Field | Value |
 | ------|-------|
@@ -191,7 +192,7 @@ e. Click on the **Test** tab and enter the following values (matching the case e
 | LATITUDE | 41.901459 |
 | DEPARTMENT_BUREAU | CONSERVATION |
 
-f. Click **Predict** and verify the prediction is **FAILED**
+c. Click **Predict** and verify the prediction is **FAILED**
 
 ![Prediction](images/ss18.png)
 
