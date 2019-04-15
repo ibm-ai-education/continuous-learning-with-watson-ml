@@ -4,7 +4,7 @@
 
 ## Overview
 
-This lab is based on the IBM Code Pattern [Continuous Learning with Watson Machine Learning and IBM Db2 Warehouse on Cloud](https://github.com/IBM/continuous-learning-with-watson-ml-and-db2). It has been modified to use an instructor provided version of IBM DB2 Warehouse on Cloud as this no longer has a Lite offering.
+This lab is based on the IBM Code Pattern [Continuous Learning with Watson Machine Learning and IBM Db2 Warehouse on Cloud](https://github.com/IBM/continuous-learning-with-watson-ml-and-db2).
 
 In this lab, we will use IBM Watson Machine Learning and Watson Studio — which allows data scientists and analysts to quickly build and prototype models — to monitor deployments, and to learn over time as more data becomes available. Performance Monitoring and Continuous Learning enables machine learning models to re-train on new data supplied by the user or other data sources. All applications and analysis tools that depend on the model are automatically updated as Watson Studio handles the selection and deployment of the best model.
 
@@ -63,20 +63,62 @@ e. Click **Create** to complete the New Project wizard.
 
 ### 2. Add DB2 Warehouse on Cloud connection to Watson Studio Project
 
-a. Click **Add to project** and then click on **Connection**
+a. Open another browser tab and navigate to https://cloud.ibm.com
+
+b. Click on **Create resource**
+
+c. On the left select the **Databases** category and then scroll down and click **Db2 Warehouse**.
+
+d. Accept the defaults and click **Create**
+
+e. On the left select **Service credentials**
+
+![Db2 Warehouse create ](images/ss3.1.png)
+
+f. Click on **New credential** and then click **Add**
+
+g. Click on **View credentials** to show the credentials. Click on the **Copy** icon to copy the credentials to your clipboard.
+
+![Db2 Warehouse credentials ](images/ss3.2.png)
+
+h. Open up a new text file with your favorite text editor and paste the credentials (you'll need to refer to them later).
+
+i. In the navigation area on the left click **Manage** and then click **Open console**
+
+![Db2 Warehouse manage ](images/ss3.3.png)
+
+j. Click the hamburger icon at the top left and select **LOAD**
+
+k. Click on **browse files** and select the file *buildings_source_inspection_data_2017.csv* that you downloaded earlier.
+
+l. Click **NEXT**
+
+m. Under **SCHEMA** select the first one (it should be something like *DASHnnnnnn*) and the click on **New Table**
+
+![Db2 Warehouse import data](images/ss3.4.png)
+
+n. Enter `VIOLATIONS` as the new table name and click **CREATE**. Click **Next**.
+
+o. Click **Next** again and then click **Begin Load**
+
+p. When the load completes click anywhere outside of the Notification Window to clear it
+
+q. Repeat steps k-o using the file *buildings_violations_September_v2.csv* and naming the database `VIOLATIONS_FEEDBACK`
+
+r. Go back to your Watson Studio tab and dlick **Add to project** and then click on **Connection**
 
 ![Add connection](images/ss4.png)
 
-b. Select **Db2 Warehouse** as the  connection type. Name the Connection *Violations DB* and provide the following values that will be provided to you by your instructor.
+s. Select **Db2 Warehouse** as the  connection type. Name the Connection *Violations DB* and provide the following values from the credentials you saved earlier
 
-| Field | Value |
-| ------|-------|
-| Username | Provided by instructor |
-| Password | Provided by instructor |
-| Hostname | Provided by instructor |
-| Database | Provided by instructor |
+| Field |
+| ------|
+| Username |
+| Password |
+| Hostname |
+| Database |
 
-c. Verify that the new connection appears under **Data Assets**
+t. Verify that the new connection appears under **Data Assets**
 
 ![Connection](images/ss5.png)
 
@@ -84,7 +126,7 @@ c. Verify that the new connection appears under **Data Assets**
 
 a. Click **Add to project** again and then click on **Connected data**. Click **Select source**
 
-b. Select the **VIOLATIONS** table under the schema provided to you by your instructor
+b. Select the **VIOLATIONS** table under your *DASHnnnnnn* schema
 
 ![Table](images/ss6.png)
 
@@ -146,7 +188,7 @@ a. Click on the **Evaluation** tab, scroll down and then click **Configure perfo
 
 b. Select your Spark instance, and then  select the metric **weightedFMeasure** and enter `0.97` as the threshold
 
-c. Click on **Select feedback data reference** and select the **VIOLATIONS_FEEDBACK** table under the  schema name provide to you by your instructor. Click **Select**
+c. Click on **Select feedback data reference** and select the **VIOLATIONS_FEEDBACK** table under your *DASHnnnnnn* schema. Click **Select**
 
 ![Feedback data](images/ss12.png)
 
