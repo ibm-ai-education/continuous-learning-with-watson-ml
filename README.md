@@ -63,53 +63,58 @@ e. Click **Create** to complete the New Project wizard.
 
 ### 2. Add DB2 Warehouse on Cloud connection to Watson Studio Project
 
-a. Open another browser tab and navigate to https://cloud.ibm.com
+a. Download the following files to your machine. You'll need them later to populate databases that you will create.
 
-b. Click on **Create resource**
+[buildings_source_inspection_data_2017.csv]()
+[buildings_violations_September_v2.csv]()
 
-c. On the left select the **Databases** category and then scroll down and click **Db2 Warehouse**.
+b. Open another browser tab and navigate to https://cloud.ibm.com
 
-d. Accept the defaults and click **Create**
+c. Click on **Create resource**
 
-e. On the left select **Service credentials**
+d. On the left select the **Databases** category and then scroll down and click **Db2 Warehouse**.
+
+e. Accept the defaults and click **Create**
+
+f. On the left select **Service credentials**
 
 ![Db2 Warehouse create ](images/ss3.1.png)
 
-f. Click on **New credential** and then click **Add**
+g. Click on **New credential** and then click **Add**
 
-g. Click on **View credentials** to show the credentials. Click on the **Copy** icon to copy the credentials to your clipboard.
+h. Click on **View credentials** to show the credentials. Click on the **Copy** icon to copy the credentials to your clipboard.
 
 ![Db2 Warehouse credentials ](images/ss3.2.png)
 
-h. Open up a new text file with your favorite text editor and paste the credentials (you'll need to refer to them later).
+i. Open up a new text file with your favorite text editor and paste the credentials (you'll need to refer to them later).
 
-i. In the navigation area on the left click **Manage** and then click **Open console**
+j. In the navigation area on the left click **Manage** and then click **Open console**
 
 ![Db2 Warehouse manage ](images/ss3.3.png)
 
-j. Click the hamburger icon at the top left and select **LOAD**
+k. Click the hamburger icon at the top left and select **LOAD**
 
-k. Click on **browse files** and select the file *buildings_source_inspection_data_2017.csv* that you downloaded earlier.
+l. Click on **browse files** and select the file *buildings_source_inspection_data_2017.csv* that you downloaded earlier.
 
-l. Click **NEXT**
+m. Click **NEXT**
 
-m. Under **SCHEMA** select the first one (it should be something like *DASHnnnnnn*) and the click on **New Table**
+n. Under **SCHEMA** select the first one (it should be something like *DASHnnnnnn*) and the click on **New Table**
 
 ![Db2 Warehouse import data](images/ss3.4.png)
 
-n. Enter `VIOLATIONS` as the new table name and click **CREATE**. Click **Next**.
+o. Enter `VIOLATIONS` as the new table name and click **CREATE**. Click **Next**.
 
-o. Click **Next** again and then click **Begin Load**
+p. Click **Next** again and then click **Begin Load**
 
-p. When the load completes click anywhere outside of the Notification Window to clear it
+q. When the load completes click anywhere outside of the Notification Window to clear it
 
-q. Repeat steps k-o using the file *buildings_violations_September_v2.csv* and naming the database `VIOLATIONS_FEEDBACK`
+r. Repeat steps k-o using the file *buildings_violations_September_v2.csv* and naming the database `VIOLATIONS_FEEDBACK`
 
-r. Go back to your Watson Studio tab and dlick **Add to project** and then click on **Connection**
+s. Go back to your Watson Studio tab and dlick **Add to project** and then click on **Connection**
 
 ![Add connection](images/ss4.png)
 
-s. Select **Db2 Warehouse** as the  connection type. Name the Connection *Violations DB* and provide the following values from the credentials you saved earlier
+t. Select **Db2 Warehouse** as the  connection type. Name the Connection *Violations DB* and provide the following values from the credentials you saved earlier
 
 | Field |
 | ------|
@@ -118,7 +123,7 @@ s. Select **Db2 Warehouse** as the  connection type. Name the Connection *Violat
 | Hostname |
 | Database |
 
-t. Verify that the new connection appears under **Data Assets**
+u. Verify that the new connection appears under **Data Assets**
 
 ![Connection](images/ss5.png)
 
