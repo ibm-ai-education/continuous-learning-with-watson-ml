@@ -65,8 +65,8 @@ e. Click **Create** to complete the New Project wizard.
 
 a. Download the following files to your machine. You'll need them later to populate databases that you will create.
 
-[buildings_source_inspection_data_2017.csv]()
-[buildings_violations_September_v2.csv]()
+[buildings_source_inspection_data_2017.csv](https://raw.githubusercontent.com/ibm-ai-education/continuous-learning-with-watson-ml/master/data/buildings_source_inspection_data_2017.csv)
+[buildings_violations_September_v2.csv](https://raw.githubusercontent.com/ibm-ai-education/continuous-learning-with-watson-ml/master/data/buildings_violations_September_v2.csv)
 
 b. Open another browser tab and navigate to https://cloud.ibm.com
 
